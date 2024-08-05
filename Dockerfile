@@ -8,10 +8,12 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
 # Copy everything to the container
 COPY . .
 
 # Expose port
-EXPOSE 3000
+EXPOSE 5555
+
+CMD ["npm", "run", "dockerstart"]
